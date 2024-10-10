@@ -1,0 +1,5 @@
+{
+    "editor.guides.indentation": false,
+    "editor.guides.highlightActiveIndentation": false,
+    "workbench.tree.renderIndentGuides": "none"
+}
