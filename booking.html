@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Travigo - Booking</title>
+    <title>Travigo - Destinations</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <!-- Header -->
     <header>
-        <img class="logo" src="img/travell2.png">
+        <img class="logo" src="img/travell2.png" alt="Travigo Logo">
         <div class="bx bx-menu" id="menu-icon"></div>
         <ul class="navbar">
             <li><a href="index.html">Home</a></li>
@@ -19,65 +19,124 @@
             <li><a href="contact.html">Contact Us</a></li>
         </ul>
     </header>
-
-    <!-- Booking Form -->
-    <section class="booking-form-section">
-        <div class="form-container">
-            <h2>Book Your Trip Now</h2>
-            <form action="#" method="POST">
-                <label for="name">Full Name:</label>
-                <input type="text" id="name" name="name" placeholder="Enter your name" required>
-
-                <label for="email">Email Address:</label>
-                <input type="email" id="email" name="email" placeholder="Enter your email" required>
-
-                <label for="destination">Choose Destination:</label>
-                <select id="destination" name="destination" required>
-                    <option value="machu-picchu">Machu Picchu</option>
-                    <option value="london">London</option>
-                    <option value="new-york">New York</option>
-                    <option value="dubai">Dubai</option>
-                </select>
-
-                <label for="date">Departure Date:</label>
-                <input type="date" id="date" name="date" required>
-
-                <label for="persons">Number of Persons:</label>
-                <input type="number" id="persons" name="persons" min="1" max="10" required>
-
-                <label for="message">Additional Message:</label>
-                <textarea id="message" name="message" placeholder="Anything else we should know?" rows="4"></textarea>
-
-                <input type="submit" value="Book Now">
-            </form>
+    
+    <section class="home" id="home">
+        <div class="home-text">
+            <h1>Travigo <br> Travel</h1>
+            <a href="#" class="home-btn">Destinations</a>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer>
-        <div class="footer">
-            <div class="main">
-                <div class="list">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="#">About us</a></li>
-                        <li><a href="#">Terms & Conditions</a></li>
-                        <li><a href="#">Privacy Policy</a></li>
-                        <li><a href="#">Help</a></li>
-                        <li><a href="#">Tours</a></li>
-                    </ul>
-                </div>
-                <div class="list">
-                    <h4>Contact Info</h4>
-                    <ul>
-                        <li><a href="#">98 West 21th Street</a></li>
-                        <li><a href="#">New York NY 10016</a></li>
-                        <li><a href="#">+(123)-123-1234</a></li>
-                        <li><a href="#">info@travigo.com</a></li>
-                    </ul>
-                </div>
+    <!-- Destinations Section -->
+    <section class="destinations-section">
+        <div class="title">
+            <h2>Explore Our Up Coming Destinations</h2>
+        </div>
+   
+
+        <div class="destinations-container" id="destination-list">
+            <div class="destination-box" data-city="Paris" data-date="2024-12-31T00:00:00">
+                <img src="img/paris.jpg" alt="Paris">
+                <h3>Paris, France</h3>
+                <p>Explore the city of love and lights!</p>
+                <div class="countdown" id="countdown-paris"></div>
+                <button class="home-btn" onclick="openModal('Paris')">Book Now</button>
+            </div>
+            <div class="destination-box" data-city="London" data-date="2024-11-20T00:00:00">
+                <img src="img/london.jpg" alt="London">
+                <h3>London, UK</h3>
+                <p>Discover the historic landmarks of London.</p>
+                <div class="countdown" id="countdown-london"></div>
+                <button class="home-btn" onclick="openModal('London')">Book Now</button>
+            </div>
+            <div class="destination-box" data-city="Machu Picchu" data-date="2025-01-15T00:00:00">
+                <img src="img/machu-picchu.jpg" alt="Machu Picchu">
+                <h3>Machu Picchu, Peru</h3>
+                <p>Experience the ancient Incan city in the clouds.</p>
+                <div class="countdown" id="countdown-machu-picchu"></div>
+                <button class="home-btn" onclick="openModal('Machu Picchu')">Book Now</button>
+            </div>
+            <div class="destination-box" data-city="Dubai" data-date="2024-10-30T00:00:00">
+                <img src="img/dubai.jpg" alt="Dubai">
+                <h3>Dubai, UAE</h3>
+                <p>Feel the luxury and modern beauty of Dubai.</p>
+                <div class="countdown" id="countdown-dubai"></div>
+                <button class="home-btn" onclick="openModal('Dubai')">Book Now</button>
             </div>
         </div>
-    </footer>
+        
+
+        <!-- Pagination -->
+        <div class="pagination">
+            <a href="booking.html" class="active">1</a>
+        </div>
+    </section>
+
+    <!-- Modal -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2 id="modal-title">Booking for City</h2>
+            <form id="booking-form">
+                <label for="name">Full Name:</label>
+                <input type="text" id="name" name="name" placeholder="Your name" required>
+    
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="Your email" required>
+    
+                <label for="date">Date of Trip:</label>
+                <input type="date" id="date" name="date" required>
+    
+                <input type="submit" value="Confirm Booking">
+            </form>
+        </div>
+    </div>
+    <!-- Footer -->
+    <section id="contact">
+		<div class="footer">
+			<div class="main">
+				<div class="list">
+					<h4>Quick Links</h4>
+					<ul>
+						<li><a href="#">About us</a></li>
+						<li><a href="#">Terms & Conditions</a></li>
+						<li><a href="#">Privacy Policy</a></li>
+						<li><a href="#">Help</a></li>
+						<li><a href="#">Tours</a></li>
+					</ul>
+				</div>
+
+				<div class="list">
+					<h4>Support</h4>
+					<ul>
+						<li><a href="#">About us</a></li>
+						<li><a href="#">Terms & Conditions</a></li>
+						<li><a href="#">Privacy Policy</a></li>
+						<li><a href="#">Help</a></li>
+						<li><a href="#">Tour</a></li>
+					</ul>
+				</div>
+
+				<div class="list">
+					<h4>Contact Info</h4>
+					<ul>
+						<li><a href="#">98 West 21th Street</a></li>
+						<li><a href="#">New York NY 10016</a></li>
+						<li><a href="#">+(123)-123-1234</a></li>
+						<li><a href="#">info@travigo.com</a></li>
+						<li><a href="#">+(123)-123-1234</a></li>
+					</ul>
+				</div>
+
+				
+			</div>
+		</div>
+
+		<div class="end-text">
+			<p>Copyright ©2024 All rights reserved | Travigo</p>
+		</div>
+	</section>
+
+    <script type="text/javascript" src="js/script.js"></script>
 </body>
 </html>
